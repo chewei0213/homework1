@@ -1,0 +1,6 @@
+import requests
+import json
+url = "http://opendata2.epa.gov.tw/AQX.json"
+res = requests.get(url)
+data=json.loads(res.text)
+print(data[0]['County']+data[0]['SiteName']+"站, PM2.5="+data[0]['PM2.5'])
